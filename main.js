@@ -1,30 +1,21 @@
 
-console.log("%c¡Ejercicio 2 !",
+console.log("%c¡Ejercicio 3 !",
 "background:linear-gradient(#000, #FF8000); color:#fff; padding: 5px 10px;");
-console.log("Dado un número indicar si es par o impar y si es mayor de 10.");
+console.log("Construir el algoritmo para determinar el voltaje de un circuito a partir de la resistencia y la intensidad de corriente.");
 
 
-let num = parseInt(prompt("Ingrese el Numero  "));
-let DV = num%2;
+let I = parseInt(prompt("Ingrese el Valor de la Intencidad de la Corriente  "));
+let R = parseInt(prompt("Ingrese el Valor de la Resistencia  "));
 
-function par(){
-    console.log("Numero ingresado")
-    console.log(DV)
-    console.log("Los resultados son los siguientes")
-    switch (DV){
-        case 0:
-            console.log("El Numero Es Par :3")
-        break;
-        default:
-            console.log("El Numero Es Impar :d")
-        break;
-    };
-    if (num > 10){
-        console.log("El Numero Es Mayor Que 10")
-    } else{
-        console.log("El Numero Es Menor Que 10")
-    }
-    return
+
+function Voltaje(){
+    console.log("Intencidad Ingresada")
+    console.log(I)
+    console.log("Resistencia Ingresada")
+    console.log(R)
+    console.log("-----------------Calculando----------------")
+    let V = I * R
+    console.log(`Segun la intencidad registrada de  ${I} y la resistencia registrada de ${R} se determina el valor del Voltaje de ${V}`)
 };
 
-par();
+Voltaje();
