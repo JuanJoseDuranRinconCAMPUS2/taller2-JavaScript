@@ -1,25 +1,50 @@
 
-console.log("%c¡Ejercicio 8 !",
+console.log("%c¡Ejercicio 9 !",
 "background:linear-gradient(#000, #FF8000); color:#fff; padding: 5px 10px;");
-console.log("Programa que Ingrese por teclado: a. el valor del lado de un cuadrado para mostrar por pantalla el perímetro del mismo b. la base y la altura de un rectángulo para mostrar el área del mismo");
+console.log("N atletas han pasado a finales en salto triple en los juegos olímpicos femenio de 2022. Diseñe un programa que pida por teclado los nombres de cada atleta finalista y a su vez, sus marcas del salto en metros. Informar el nombre de la atleta campeona que se quede con la medalla de oro y si rompió récord, reportar el pago que será de 500 millones. El récord esta en 15,50 metros.");
 
-function FacilisimoVerdad(){
-    console.log("--------------Calculadora de Perimetro y Area--------------");
-    let Operacion = prompt(`Si quieres calcular el Perimetro de un cuadrado digita "P" y Si quieres calcular el Area de un triangulo digita "A"`)
-    if (Operacion == "P" || Operacion=="p"){
-        console.log("--------------Sistema de calculo del Perimetro de un cuadrado--------------");
-        let L = parseFloat(prompt("Ingresa el Valor del lado del cuadrado"));
-        console.log(`-----------Realizando Operacion P=${L}*4cm--------------`);
-        console.log(`Resultado: El perimetro es de ${L*4}cm`);
-    }else if (Operacion == "A" || Operacion=="a") {
-        console.log("--------------Sistema de calculo del Area de un Triangulo--------------");
-        let B = parseFloat(prompt("Ingresa el Valor de la Base del Triangulo"));
-        let H = parseFloat(prompt("Ingresa el Valor de la Altura del Triangulo"));
-        console.log(`-----------Realizando Operacion A= (${B}*${H})/2cm--------------`);
-        console.log(`Resultado: El Area es de ${(B*H)/2}cm3`);
-    }else {
-        console.log("ERROR datos no validos 404")
-    }
+
+function Bienvenida (){
+    console.log("------------------------JuegosOlimpicosSoftware2022-------------------------");
+    console.log("Hola!, Bienvenido al sistema de registro oficial de los juegos olimpicos");
+    console.log("Soy Miraitowa y sere tu asistente virtual en esta ocasion :3");
 }
 
-FacilisimoVerdad()
+let Nombres = [];
+let Marcas = [];
+var Alpha = 0;
+function Atletas(){
+    let i = 0
+    do{
+        console.log("Hola Por favor ingresa los datos de las finalistas")
+        let Nom= prompt(`Ingrese el nombre de la finalista ${i+1}   `);
+        let Mar = parseFloat(prompt(`Ingrese la Marca de la finalista ${i+1}   `));
+        Nombres.push(Nom);
+        Marcas.push(Mar);   
+        BD = Nombres.concat(Marcas)
+        for(i = 0; i < Marcas.length; i++){
+
+            if (Marcas[i] > Alpha)
+        
+            {
+        
+                Alpha = Marcas[i];
+        
+            }
+        
+        }
+
+    }while(confirm("¿Desea ingresar otra Finalista?"))
+    console.log("A continuacion la informacion registrada")
+    console.log(BD)
+    let IndexMayor = Marcas.indexOf(Alpha); 
+    console.log("--------------------CALCULANDO----------------------------");
+    console.log(`La Finalista ganadora del Oro es ${Nombres[IndexMayor]} gracias a su marca de ${Marcas[IndexMayor]}mts. FELICIDADES`);
+    if (Marcas[IndexMayor] > 15.50){
+        console.log("INCREIBLE!, rompiste nuestro record anterior, recuerda reclamar tu pago de 500 millones por llegar tan lejos")
+    }
+        
+}
+
+Bienvenida()
+Atletas()
